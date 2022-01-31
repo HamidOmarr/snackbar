@@ -1,6 +1,3 @@
-from cgi import print_directory
-
-
 TotaalPatat = int(input("Hoeveel Patat?"))
 TotaalFrikadellen = int(input("Hoeveel Frikadellen?"))
 TotaalKroketten = int(input("Hoeveel Kroketten?"))
