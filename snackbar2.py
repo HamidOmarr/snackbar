@@ -1,12 +1,18 @@
+from cgi import print_directory
+
+
 TotaalPatat = int(input("Hoeveel Patat?"))
 TotaalFrikadellen = int(input("Hoeveel Frikadellen?"))
 TotaalKroketten = int(input("Hoeveel Kroketten?"))
 
-Metbrood = 0
-xxl = 0
-vega = 0
+
+Zonder = 0 
+Gewoon = 0
+Metbrood = 0 
+xxl = 0 
+vega = 0 
 FrietSaus = 0 
-Ketchup = 0
+Ketchup = 0 
 Patat = 1.50 * TotaalPatat
 Frikadellen = 1.80 * TotaalFrikadellen
 Kroketten = 2.00 * TotaalKroketten
@@ -21,31 +27,32 @@ for x in range(TotaalPatat):
         FrietSaus = FrietSaus + 1
     if Patatsaus == "Ketchup":
         Ketchup = Ketchup + 1
-print ("FrietSaus:" ,FrietSaus, "X")
-print ("Ketchup:" ,Ketchup, "X")
+print ("FrietSaus:" ,FrietSaus, "X" ,"0.30","=",0.30*FrietSaus)
+print ("Ketchup:" ,Ketchup, "X" ,"0.20","=",0.20*Ketchup)
+print ("Totaal:" , 0.30*FrietSaus+0.20*Ketchup + Patat) 
 
 for x in range(TotaalFrikadellen):
-    FricandelSoort = input("welke soort fricandel: gewone, vega of XXL?")
+    FricandelSoort = input("welke soort fricandel: gewone, Vega of Xxl?")
     if FricandelSoort == "Vega":
         vega = vega + 1
     if FricandelSoort == "Xxl":
         xxl = xxl + 1
     if FricandelSoort == "Gewoon":
-        Gewoon = 0
         Gewoon = Gewoon + 1
-print ("Gewoon:" ,Gewoon, "X")
-print ("vega:" ,vega, "X")
-print ("xxl:" ,xxl, "X")
+print ("Gewoon:" ,Gewoon, "X","0","=",0*Gewoon)
+print ("vega:" ,vega, "X","0.30","=",0.30*vega)
+print ("xxl:" ,xxl, "X","1.20","=",1.20*xxl)
+print ("Totaal:" , 0.30*vega+1.20*xxl + Frikadellen) 
 
 for x in range(TotaalKroketten):
     KroketBrood = input("Met of Zonder Brood?")
     if KroketBrood == "Met":
         Metbrood = Metbrood + 1
     if KroketBrood == "Zonder":
-        Zonder = 0
         Zonder = Zonder + 1
-print ("Metbrood:" ,Metbrood, "X")
-print ("Zonder:" ,Zonder, "X")
+print ("Metbrood:" ,Metbrood, "X","0.20","=",0.20*Metbrood)
+print ("Zonder:" ,Zonder, "X","0","=",0*Zonder)
+print ("Totaal:" , +0.20*Metbrood + Kroketten) 
 
 
 if TotaalPatat > 0:
