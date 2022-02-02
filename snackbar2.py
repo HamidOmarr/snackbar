@@ -1,5 +1,5 @@
-
-while True:
+Bestellen = "ja"
+while Bestellen  == "ja":
     TotaalPatat = int(input("Hoeveel Patat?"))
     TotaalFrikadellen = int(input("Hoeveel Frikadellen?"))
     TotaalKroketten = int(input("Hoeveel Kroketten?"))
@@ -44,15 +44,18 @@ while True:
 
 
         
-    a = input("Wil je nog meer bestellen?")  
+    verderBestellen = input("Wil je nog meer bestellen?")  
+    if verderBestellen == "n":
+        Bestellen = "nee"
 
-Patat = 1.50 * TotaalPatat
-Frikadellen = 1.80 * TotaalFrikadellen
-Kroketten = 2.00 * TotaalKroketten
-totaal = Patat + Frikadellen + Kroketten
-Bestelkosten = 2.30
-kortingboven40 = totaal / 100 * 5
-kortingboven100 = totaal / 100 * 7.5
+
+    Patat = 1.50 * TotaalPatat
+    Frikadellen = 1.80 * TotaalFrikadellen
+    Kroketten = 2.00 * TotaalKroketten
+    totaal = Patat + Frikadellen + Kroketten
+    Bestelkosten = 2.30
+    kortingboven40 = totaal / 100 * 5
+    kortingboven100 = totaal / 100 * 7.5
 
 if TotaalPatat > 0:
     print( "Patat:" ,"€", Patat , "Voor" , TotaalPatat ,"stukken")
