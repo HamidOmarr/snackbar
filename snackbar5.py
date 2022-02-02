@@ -46,8 +46,17 @@ def KroketMetBrood(TotaalKroketten):
     TotaalKroketPrijs =  0.20*Metbrood
     return TotaalKroketPrijs
 
+def bittergarnituur():
+    SupriseSnacks = ["Bitterbal","Kaasvlammetje","Gehaktbal","Kipburger"]
+    SupriseBitter = input("Wil jij een surprise bittergarnituur?")
+    if SupriseBitter == "j": 
+        GrooteSnack = input("mini, normal of big?")
+        SnackRandom = random.choice(SupriseSnacks)
+        print (SnackRandom)
+    return SnackRandom
 
-def BijKosten(TotaalPatat,TotaalFrikadellen,TotaalKroketten,TotaalSausPrijs,TotaalFrikandelPrijs,TotaalKroketPrijs):
+
+def BijKosten(TotaalPatat,TotaalFrikadellen,TotaalKroketten,TotaalSausPrijs,TotaalFrikandelPrijs,TotaalKroketPrijs,SnackRandom):
     Patat = (1.50 * TotaalPatat) + TotaalSausPrijs
     Frikadellen = 1.80 * TotaalFrikadellen + TotaalFrikandelPrijs
     Kroketten = 2.00 * TotaalKroketten + TotaalKroketPrijs
@@ -55,13 +64,15 @@ def BijKosten(TotaalPatat,TotaalFrikadellen,TotaalKroketten,TotaalSausPrijs,Tota
     Bestelkosten = 2.30
     kortingboven40 = totaal / 100 * 5
     kortingboven100 = totaal / 100 * 7.5
+    print (SnackRandom)
     if TotaalPatat > 0:
         print( "Patat:","€",Patat)
     if TotaalFrikadellen > 0:
         print("Frikadellen:","€",Frikadellen) 
     if TotaalKroketten > 0:
         print("Kroketten:","€",Kroketten)
-
+    if SnackRandom:
+        print(SnackRandom,":","€","1.0")
 
 
     if totaal < 10:
@@ -79,15 +90,31 @@ def BijKosten(TotaalPatat,TotaalFrikadellen,TotaalKroketten,TotaalSausPrijs,Tota
     print ("Totaal:","€",totaal)
 
 
+def SausV():
+    Ketchup = 0.20
+    Frietsaus = 0.30 
+    Curry = 0.20 
+    Mosterd = 0.10 
+    print ("----------------------------------------------------")
+    print ("    Ketchup: €0.20  ")
+    print ("    Frietsaus: €0.30  ")
+    print ("    Curry: €0.20  ")
+    print ("    Mosterd: €0.10  ")
+    print ("----------------------------------------------------")
+    Sausvraag = input("Wat voor Saus wil je hierop?")
+
+
+
 Bestellen = True
 while Bestellen == True:
     HvlPatat, Hvlfrikandel, HvlKroket = Snackbar()
     TotaalSaus = PatatSaus(HvlPatat)
     TotaalFrikandel = Frikandelkeuzen(Hvlfrikandel)
     TotaalKroket = KroketMetBrood(HvlKroket)
+    TotaalSnacks = bittergarnituur()
     verderBestellen = input("Wil je nog meer bestellen?")
     if verderBestellen == "n":
-        BijKosten(HvlPatat,Hvlfrikandel,HvlKroket,TotaalSaus,TotaalFrikandel,TotaalKroket)
+        BijKosten(HvlPatat,Hvlfrikandel,HvlKroket,TotaalSaus,TotaalFrikandel,TotaalKroket,TotaalSnacks)
         Bestellen = False
 
 
