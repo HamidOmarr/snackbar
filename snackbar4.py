@@ -3,16 +3,14 @@ def Snackbar():
     TotaalFrikadellen = int(input("Hoeveel Frikadellen?"))
     TotaalKroketten = int(input("Hoeveel Kroketten?"))
 
-    Zonder = 0 
-    Gewoon = 0
-    Metbrood = 0 
-    xxl = 0 
-    vega = 0 
-    FrietSaus = 0 
-    Ketchup = 0 
-    return TotaalPatat ,TotaalFrikadellen , TotaalKroketten 
+
+    return TotaalPatat , TotaalFrikadellen , TotaalKroketten
+
 
 def PatatSaus(TotaalPatat):
+    print (TotaalPatat)
+    FrietSaus = 0
+    Ketchup = 0 
     for x in range(TotaalPatat):
         Patatsaus = input("Wat voor saus wil op deze patat? Ketchup of FrietSaus")
         if Patatsaus == "FrietSaus":
@@ -24,20 +22,26 @@ def PatatSaus(TotaalPatat):
     return Patatsaus
 
 def Frikandelkeuzen(TotaalFrikadellen):
+    Gewoon = 0
+    Xxl = 0 
+    vega = 0 
+    print (TotaalFrikadellen) 
     for x in range(TotaalFrikadellen):
-        FrikandelSoort = input("welke soort fricandel: gewone, Vega of Xxl?")
+        FrikandelSoort = input("welke soort fricandel: Gewoon , Vega of Xxl ?")
         if FrikandelSoort == "Vega":
             vega = vega + 1
         if FrikandelSoort == "Xxl":
-            xxl = xxl + 1
+            Xxl = Xxl + 1
         if FrikandelSoort == "Gewoon":
             Gewoon = Gewoon + 1
     print ("Gewoon:" ,Gewoon, "X","0","=",0*Gewoon)
     print ("vega:" ,vega, "X","0.30","=",0.30*vega)
-    print ("xxl:" ,xxl, "X","1.20","=",1.20*xxl)
+    print ("xxl:" ,Xxl, "X","1.20","=",1.20*Xxl)
     return FrikandelSoort
 
 def KroketMetBrood(TotaalKroketten):
+    Zonder = 0 
+    Metbrood = 0
     for x in range(TotaalKroketten):
         KroketBrood = input("Met of Zonder Brood?")
         if KroketBrood == "Met":
@@ -81,6 +85,11 @@ def BijKosten(TotaalPatat,TotaalFrikadellen,TotaalKroketten):
 
     print (int(totaal))
  
-Snackbar()
+snackbarvariable = Snackbar()
+PatatSaus(snackbarvariable)
+Frikandelkeuzen(snackbarvariable)
+KroketMetBrood(snackbarvariable)
+BijKosten(snackbarvariable)
+
 
 
