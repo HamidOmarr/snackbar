@@ -3,12 +3,9 @@ def Snackbar():
     TotaalFrikadellen = int(input("Hoeveel Frikadellen?"))
     TotaalKroketten = int(input("Hoeveel Kroketten?"))
 
-
-    return TotaalPatat , TotaalFrikadellen , TotaalKroketten
-
+    return TotaalPatat,TotaalFrikadellen,TotaalKroketten
 
 def PatatSaus(TotaalPatat):
-    print (TotaalPatat)
     FrietSaus = 0
     Ketchup = 0 
     for x in range(TotaalPatat):
@@ -52,8 +49,6 @@ def KroketMetBrood(TotaalKroketten):
     print ("Zonder:" ,Zonder, "X","0","=",0*Zonder)
     return KroketBrood
 
-
-
 def BijKosten(TotaalPatat,TotaalFrikadellen,TotaalKroketten):
     Patat = 1.50 * TotaalPatat
     Frikadellen = 1.80 * TotaalFrikadellen
@@ -70,7 +65,6 @@ def BijKosten(TotaalPatat,TotaalFrikadellen,TotaalKroketten):
     if TotaalKroketten > 0:
         print("Kroketten:" , "€", Kroketten, "Voor", TotaalKroketten,"stukken")
 
-
     if totaal < 10:
         totaal = totaal + Bestelkosten
         print ("BestelKosten:" ,"€", Bestelkosten)
@@ -85,11 +79,14 @@ def BijKosten(TotaalPatat,TotaalFrikadellen,TotaalKroketten):
 
     print (int(totaal))
  
-snackbarvariable = Snackbar()
-PatatSaus(snackbarvariable)
-Frikandelkeuzen(snackbarvariable)
-KroketMetBrood(snackbarvariable)
-BijKosten(snackbarvariable)
+while  True:
+    HvlPatat, Hvlfrikandel, HvlKroket = Snackbar()
+    PatatSaus(HvlPatat)
+    Frikandelkeuzen(Hvlfrikandel)
+    KroketMetBrood(HvlKroket)
+    verderBestellen = input("Wil je nog meer bestellen?")
+    if verderBestellen == "n": 
+        BijKosten(HvlPatat,Hvlfrikandel,HvlKroket)
 
 
 
